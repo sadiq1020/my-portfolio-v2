@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 import LenisProvider from "@/components/common/LenisProvider";
 import { personalData } from "@/data/personal";
+import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,9 +29,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased">
-        <LenisProvider>{children}</LenisProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <LenisProvider>{children}</LenisProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
