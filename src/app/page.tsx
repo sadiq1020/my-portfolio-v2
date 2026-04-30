@@ -13,13 +13,13 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
-        <section id="home"><Hero /></section>
-        <section id="about"><About /></section>
-        <section id="techstack"><TechStack /></section>
-        <section id="skills"><Skills /></section>
-        <section id="qualification"><Qualification /></section>
-        <section id="projects"><Projects /></section>
-        <section id="contact"><Contact /></section>
+        <Hero />
+        <About />
+        <TechStack />
+        <Skills />
+        <Qualification />
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </>

@@ -1,17 +1,17 @@
+import { cn } from "@/lib/utils";
+import type { SocialLink } from "@/types";
 import Link from "next/link";
 import {
+  FaFacebook,
   FaGithub,
   FaLinkedin,
-  FaTwitter,
-  FaFacebook,
 } from "react-icons/fa";
-import type { SocialLink } from "@/types";
-import { cn } from "@/lib/utils";
+import { FaXTwitter } from "react-icons/fa6";
 
 const iconMap: Record<string, React.ElementType> = {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
+  FaXTwitter,
   FaFacebook,
 };
 
