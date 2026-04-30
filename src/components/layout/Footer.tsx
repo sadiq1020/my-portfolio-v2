@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { Heart } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -31,9 +31,12 @@ export default function Footer() {
   const ref     = useRef<HTMLElement>(null);
   const inView  = useInView(ref, { once: true, margin: "-60px" });
   const { theme, systemTheme } = useTheme();
+const [mounted, setMounted] = useState(false);
+useEffect(() => setMounted(true), []);
+const resolvedTheme = theme === "system" ? systemTheme : theme;
   const year    = new Date().getFullYear();
 
-  const resolvedTheme = theme === "system" ? systemTheme : theme;
+
 
   return (
     <footer ref={ref} className="relative border-t border-border overflow-hidden">
@@ -61,7 +64,9 @@ export default function Footer() {
             className="flex flex-col gap-4"
           >
             <a href="#home" aria-label="Back to top" className="block w-fit">
-              <motion.div
+              {
+                mounted && (
+                  <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="relative h-10 w-36"
@@ -87,6 +92,8 @@ export default function Footer() {
                   sizes="144px"
                 />
               </motion.div>
+                )
+              }
             </a>
 
             <p className="text-xs text-muted-foreground leading-relaxed max-w-[220px]">
