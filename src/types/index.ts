@@ -1,15 +1,16 @@
 // ─── Project ────────────────────────────────────────────────────────────────
 
 export interface Project {
-  slug: string;
-  title: string;
-  description: string;
-  image: string; // path relative to /public
-  techStack: string[];
-  liveUrl: string;
-  githubUrl: string;
-  challenges: string;
-  improvements: string;
+  slug:            string;
+  title:           string;
+  description:     string;
+  image:           string;
+  techStack:       string[];
+  liveUrl:         string;
+  githubClientUrl: string;       // frontend / client repo
+  githubServerUrl?: string;      // backend / server repo (optional)
+  challenges:      string;
+  improvements:    string;
 }
 
 // ─── Skills ─────────────────────────────────────────────────────────────────
@@ -17,9 +18,9 @@ export interface Project {
 export type SkillCategory = "Frontend" | "Backend" | "Tools" | "Other";
 
 export interface Skill {
-  name: string;
-  icon: string; // react-icons component name or image path
-  level: number; // 0–100
+  name:     string;
+  icon:     string;
+  level:    number;
   category: SkillCategory;
 }
 
@@ -27,20 +28,20 @@ export interface Skill {
 
 export interface Education {
   institution: string;
-  degree: string;
-  field: string;
-  startYear: string;
-  endYear: string; // "Present" if ongoing
-  result?: string;
+  degree:      string;
+  field:       string;
+  startYear:   string;
+  endYear:     string;
+  result?:     string;
 }
 
 // ─── Experience ─────────────────────────────────────────────────────────────
 
 export interface Experience {
-  company: string;
-  role: string;
-  startDate: string;
-  endDate: string; // "Present" if ongoing
+  company:     string;
+  role:        string;
+  startDate:   string;
+  endDate:     string;
   description: string[];
 }
 
@@ -48,21 +49,21 @@ export interface Experience {
 
 export interface SocialLink {
   label: string;
-  href: string;
-  icon: string; // react-icons key, e.g. "FaGithub"
+  href:  string;
+  icon:  string;
 }
 
 // ─── Personal ────────────────────────────────────────────────────────────────
 
 export interface PersonalData {
-  name: string;
-  designation: string;
-  tagline: string;
-  bio: string;
-  email: string;
-  phone: string;
-  whatsapp?: string;
-  resumeUrl: string;
+  name:         string;
+  designation:  string;
+  tagline:      string;
+  bio:          string;
+  email:        string;
+  phone:        string;
+  whatsapp?:    string;
+  resumeUrl:    string;
   profileImage: string;
-  socialLinks: SocialLink[];
+  socialLinks:  SocialLink[];
 }

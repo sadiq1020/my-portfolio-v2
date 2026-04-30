@@ -13,7 +13,7 @@ Outside of coding, you'll find me playing cricket, listening to music, or diving
   phone: "+880 1700641096",
   whatsapp: "+880 1700641096",
   resumeUrl: "/resume.pdf",
-  profileImage: "/images/profile.jpg",
+  profileImage: "/images/profile.png",
   socialLinks: [
     {
       label: "GitHub",
