@@ -45,7 +45,7 @@ export const education: Education[] = [
 
 export const experience: Experience[] = [
   {
-    company: "Tesseract Clothings Ltd.",
+    company: "Tesseract Software & Technology",
     role: "Web Developer & Assistant Manager",
     startDate: "Jan 2023",
     endDate: "Dec 2025",
@@ -57,7 +57,7 @@ export const experience: Experience[] = [
     ],
   },
  {
-  company: "Tesseract Clothings Ltd.",
+  company: "Tesseract Software & Technology",
   role: "Assistant Manager (Part-time)",
   startDate: "Jan 2026",
   endDate: "Present",

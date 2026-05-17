@@ -48,7 +48,7 @@ const journey = [
   {
     year: "2023",
     title: "Professional Start",
-    desc: "Joined Tesseract Clothings Ltd. as Web Developer & Assistant Manager. Shipped production apps with React, Next.js, and AWS.",
+    desc: "Joined Tesseract Software & Technology as Web Developer & Assistant Manager. Shipped production apps with React, Next.js, and AWS.",
   },
   {
     year: "2024",
@@ -58,7 +58,7 @@ const journey = [
   {
     year: "2026",
     title: "Levelling Up",
-    desc: "Stepped back to part-time management at Tesseract to focus on Programming Hero's Next Level Bootcamp — sharpening advanced full stack and system design skills for a serious tech career.",
+    desc: "Stepped back to part-time management at Tesseract Software & Technology to focus on Programming Hero's Next Level Bootcamp — sharpening advanced full stack and system design skills for a serious tech career.",
   },
 ];
 
