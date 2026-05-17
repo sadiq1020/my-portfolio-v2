@@ -1,6 +1,7 @@
 import type { Project } from "@/types";
 
 export const projects: Project[] = [
+  // ── 1. FoodHub V2 ────────────────────────────────────────────────────────
   {
     slug:        "foodhub-v2",
     title:       "FoodHub V2",
@@ -20,41 +21,50 @@ export const projects: Project[] = [
     improvements:
       "I plan to re-enable Google OAuth on the live version once moving off free-tier hosting, add real-time order tracking with WebSockets, and introduce a recommendation engine based on order history.",
   },
+
+  // ── 2. HireFlow ──────────────────────────────────────────────────────────
   {
-    slug:        "foodhub",
-    title:       "FoodHub",
-    description: "The first version of FoodHub — a meal ordering platform with three user roles (Customer, Provider, Admin). Customers browse and order meals with cash-on-delivery checkout. Providers manage menus and fulfil orders. Admins handle platform oversight including user management and categories.",
-    image:       "/images/projects/project-foodhub.png",
+    slug:        "hireflow",
+    title:       "HireFlow",
+    description: "An AI-powered full-stack job board platform connecting job seekers with companies through intelligent matching and AI-assisted workflows. Seekers get personalized job recommendations and AI-generated cover letters. Companies post jobs with AI-generated descriptions and manage applications through a 5-stage pipeline. Admins oversee the entire platform.",
+    image:       "/images/projects/project-hireflow.png",
     techStack:   [
-      "Next.js 16", "TypeScript", "Tailwind CSS", "shadcn/ui",
-      "better-auth", "Zustand", "React Hook Form", "Zod",
-      "TanStack Query", "Sonner", "Lucide React",
+      "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui",
+      "Framer Motion", "GSAP", "Lenis",
+      "TanStack Query", "Zustand", "React Hook Form", "Zod",
+      "Node.js", "Express", "PostgreSQL", "Prisma",
+      "Better Auth", "Google Gemini 2.5 Flash", "Cloudinary",
+      "Winston", "Vercel", "Render",
     ],
-    liveUrl:         "https://ph-next-level-b6-a4-foodhub-fronten.vercel.app",
-    githubClientUrl: "https://github.com/sadiq1020/ph_next_level_B6A4_foodhub-frontend",
-    githubServerUrl: "https://github.com/sadiq1020/ph_next_level_B6A4_foodhub-backend",
+    liveUrl:         "https://hire-flow-frontend-five.vercel.app",
+    githubClientUrl: "https://github.com/sadiq1020/HireFlow-Frontend",
+    githubServerUrl: "https://github.com/sadiq1020/HireFlow-Backend",
     challenges:
-      "Building a per-user cart persisted in localStorage with Zustand while keeping it isolated across different logged-in accounts was tricky. Route protection middleware needed to handle three distinct role-based access levels cleanly without leaking protected pages.",
+      "Integrating 4 distinct AI features (chatbot, job recommendations, cover letter generator, job description generator) required careful prompt engineering to get structured JSON outputs reliably from Gemini. The save/unsave optimistic UI with TanStack Query's onMutate rollback pattern was also complex to get right without race conditions. On the backend, setting up Winston logging with rotating file transports and an in-memory TTL cache with prefix-based invalidation added significant architectural complexity.",
     improvements:
-      "Would like to add real-time order status updates via WebSockets, a meal rating system on the browse page, and migrate to a payment gateway for a complete checkout experience.",
+      "I plan to add real-time application status notifications via WebSockets, a resume parser that auto-fills application forms, and an analytics dashboard for seekers showing their application success rate by category and job type.",
   },
+
+  // ── 3. KitchenClass ──────────────────────────────────────────────────────
   {
-    slug:        "budget-wheels",
-    title:       "Budget Wheels",
-    description: "A used car resale marketplace with three user roles — Buyer, Seller, and Admin — each with a dedicated dashboard. Sellers list vehicles with images uploaded via imgBB, buyers browse and purchase with Stripe payments, and admins manage platform-wide activity. Built with a custom Node.js/Express backend and MongoDB.",
-    image:       "/images/projects/project-budget-wheel.png",
+    slug:        "kitchenclass",
+    title:       "KitchenClass",
+    description: "A full-stack cooking course marketplace with three user roles — Student, Instructor, and Admin. Students browse, enroll in, and review expert-led culinary courses. Instructors apply for approval, publish courses with YouTube preview embeds, and track revenue and enrollments through analytics dashboards. Admins manage the platform, approve instructors, and monitor activity.",
+    image:       "/images/projects/project-kitchenclass.png",
     techStack:   [
-      "React.js", "React Router", "DaisyUI", "Tailwind CSS",
-      "Node.js", "Express.js", "MongoDB", "Firebase Auth",
-      "JWT", "Stripe", "imgBB",
+      "Next.js 15", "TypeScript", "Tailwind CSS", "shadcn/ui",
+      "Framer Motion", "Recharts", "Zustand",
+      "React Hook Form", "Zod", "Better Auth",
+      "Node.js", "Express 5", "PostgreSQL", "Prisma 7",
+      "Vercel", "Render", "Neon",
     ],
-    liveUrl:         "https://budget-wheels.web.app",
-    githubClientUrl: "https://github.com/sadiq1020/budget_wheels_clients-repo",
-    githubServerUrl: "https://github.com/sadiq1020/budget_wheels_server-repo",
+    liveUrl:         "https://kitchenclass-frontend.vercel.app",
+    githubClientUrl: "https://github.com/sadiq1020/kitchenclass-frontend",
+    githubServerUrl: "https://github.com/sadiq1020/kitchenclass-backend",
     challenges:
-      "Setting up JWT-based authentication alongside Firebase Auth required careful token management — ensuring protected API routes validated JWTs while the client stayed in sync with Firebase session state. Role-based dashboard routing also needed robust guard logic.",
+      "The instructor approval flow required careful state management — after sign-up, the frontend must explicitly call sign-in before hitting the instructor profile endpoint, since sign-up alone doesn't establish a session cookie in time. Route ordering in Express also caused issues where GET /courses/my-courses was being matched as a course ID before the fix. Setting up Google OAuth cross-domain between Vercel and Render required Better Auth's oAuthProxy plugin.",
     improvements:
-      "Want to add a search and filter system for listings, a favourites/wishlist feature for buyers, and replace imgBB with Cloudinary for more reliable image handling and transforms.",
+      "I want to add a progress tracking system per course with lesson completion checkpoints, a certificate generation feature upon course completion, and a search and recommendation engine for suggesting courses based on enrollment history.",
   },
 ];
 
