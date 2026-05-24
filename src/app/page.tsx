@@ -1,5 +1,4 @@
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
@@ -9,9 +8,10 @@ import Skills from "@/components/sections/Skills";
 import TechStack from "@/components/sections/TechStack";
 
 export default function HomePage() {
+
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
         <Hero />
         <About />
@@ -20,6 +20,7 @@ export default function HomePage() {
         <Qualification />
         <Projects />
         <Contact />
+        
       </main>
       <Footer />
     </>
