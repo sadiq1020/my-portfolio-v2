@@ -15,10 +15,10 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const project  = getProjectBySlug(slug);
+  const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
-    title:       `${project.title} — Sadiq Ibn Mas-Ud`,
+    title: `${project.title} — Sadiq Ibn Masud`,
     description: project.description,
   };
 }
@@ -30,7 +30,7 @@ export default async function ProjectDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project  = getProjectBySlug(slug);
+  const project = getProjectBySlug(slug);
 
   if (!project) notFound();
 
